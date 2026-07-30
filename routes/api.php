@@ -9,6 +9,7 @@ Route::get('/user', function (Request $request) {
 
 // Importa o Controller da Pessoa
 use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\ProdutoController;
  
 // Rota GET - usada para buscar/listar pessoas
 // Quando acessada, chama a função index() do Controller
@@ -21,3 +22,8 @@ Route::post('/pessoas', [PessoaController::class, 'store']);
 // Rota DELETE - usada para excluir uma pessoa
 // Envia o ID para a função destroy() do Controller
 Route::delete('/pessoas/{id}', [PessoaController::class, 'destroy']);
+ 
+// Rotas de produtos
+Route::get('/produtos', [ProdutoController::class, 'index']);
+Route::post('/produtos', [ProdutoController::class, 'store']);
+Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy']);
